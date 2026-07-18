@@ -98,13 +98,76 @@ let imc4 = CalcularIMC(80, 1.5);
 console.log("IMC:", imc4.toFixed(2));
 mostrarCategoria(imc4);
 
-function mostrarResultados(nombre, peso, altura) {
-    nombreCliente2(nombre);
-    let imc = CalcularIMC(peso, altura);
+function mostrarResultados(clientes4) {
+
+    let imc = CalcularIMC(clientes4.peso, clientes4.altura);
+    console.log("Cliente:", clientes4.nombre);
     console.log("IMC:", imc.toFixed(2));
 
     mostrarCategoria(imc);
+
+    console.log("------------------");
 }
 
 mostrarResultados("Raul", 130, 1.80);
 mostrarResultados("Fernando", 100, 1.45);
+
+
+let clientes = ["Braulio", "Raul", "Krystal"];
+
+console.log(clientes[0]);
+console.log(clientes[1]);
+console.log(clientes[2]);
+console.log(clientes[3]);
+
+clientes.push("Fernando");
+
+console.log(clientes);
+console.log(clientes.length);
+
+console.log("Otro array");
+
+let clientes2 = ["Romulo", "Edgar", "Victor"];
+
+console.log(clientes2.length);
+
+clientes2.push("krystal");
+
+console.log(clientes2.length);
+
+clientes2.push("Miguelina");
+
+console.log(clientes2.length);
+
+let clientes3 = ["Guadalupe", "Ronaldo", "Kawasaky", "Lebron"];
+
+for (let i = 0; i < clientes3.length; i++) {
+    console.log(clientes[i]);
+}
+
+console.log("Otra mision");
+
+let clientes4 = [
+    {
+        nombre: "Braulio",
+        peso: 130,
+        altura: 1.80
+    },
+    {
+        nombre: "Raúl",
+        peso: 90,
+        altura: 1.75
+    },
+    {
+        nombre: "Maria",
+        peso: 85,
+        altura: 1.65
+    }
+];
+console.log("-----------------------");
+
+for (let i = 0; i < clientes4.length; i++) {
+
+    let cliente = clientes4[i];
+    mostrarResultados(cliente);
+}
