@@ -171,3 +171,50 @@ for (let i = 0; i < clientes4.length; i++) {
     let cliente = clientes4[i];
     mostrarResultados(cliente);
 }
+
+console.log("-----------------------");
+
+for (let i = 0; i < clientes4.length; i++) {
+    console.log(clientes4[i].nombre);
+}
+
+let numeros10 = [3, 8, 12, 5, 20];
+
+for (let i = 0; i < numeros10.length; i++) {
+
+    if (numeros10[i] > 10) {
+        console.log(numeros10[i]);
+    }
+}
+
+console.log("--------------");
+
+let clientes11 = [
+    {
+        nombre: "Braulio",
+        imc: 35
+    },
+    {
+        nombre: "Raul",
+        imc: 22
+    },
+    {
+        nombre: "Carlos",
+        imc: 31
+    }
+];
+
+let clientesObesidad = [];
+
+for (let i = 0; i < clientes11.length; i++) {
+
+    if (clientes11[i].imc > 30) {
+        clientesObesidad.push(clientes11[i]);
+    }
+}
+
+console.log("Lista de clientes obesos");
+
+for (let i = 0; i < clientesObesidad.length; i++) {
+    console.log(clientesObesidad[i]);
+}
