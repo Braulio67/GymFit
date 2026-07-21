@@ -218,3 +218,95 @@ console.log("Lista de clientes obesos");
 for (let i = 0; i < clientesObesidad.length; i++) {
     console.log(clientesObesidad[i]);
 }
+
+console.log("------------Filter------------");
+
+let clientes15 = [
+    {
+        nombre: "Braulio",
+        imc: 35
+    },
+    {
+        nombre: "Raul",
+        imc: 22
+    },
+    {
+        nombre: "Carlos",
+        imc: 31
+    },
+    {
+        nombre: "Pedro",
+        imc: 28
+    },
+    {
+        nombre: "Luis",
+        imc: 24
+    }
+];
+
+let clientesSobrepeso = clientes15.filter(cliente => cliente.imc >= 25);
+console.log(clientesSobrepeso);
+
+let clientes16 = [
+    {
+        nombre: "Braulio",
+        imc: 35,
+        activo: true
+    },
+    {
+        nombre: "Raul",
+        imc: 22,
+        activo: false
+    },
+    {
+        nombre: "Carlos",
+        imc: 31,
+        activo: true
+    },
+    {
+        nombre: "Pedro",
+        imc: 28,
+        activo: false
+    }
+];
+
+let clientesEspeciales = clientes16.filter(cliente => cliente.imc > 30 && cliente.nombre === "Carlos");
+console.log(clientesEspeciales);
+
+console.log("-------Otro de Filter------");
+
+let clientesOferta = clientes16.filter(cliente => cliente.imc > 30 && cliente.activo);
+console.log(clientesOferta);
+
+console.log("--------------------------");
+
+let clientes17 = [
+    {
+        nombre: "Braulio",
+        imc: 35,
+        activo: true
+    },
+    {
+        nombre: "Raul",
+        imc: 22,
+        activo: true
+    },
+    {
+        nombre: "Carlos",
+        imc: 31,
+        activo: false
+    },
+    {
+        nombre: "Pedro",
+        imc: 28,
+        activo: true
+    },
+    {
+        nombre: "Luis",
+        imc: 33,
+        activo: false
+    }
+];
+
+let clientesSeguimiento = clientes17.filter(cliente => cliente.imc >30 && cliente.activo === false);
+console.log(clientesSeguimiento);
