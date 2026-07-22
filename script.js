@@ -308,5 +308,138 @@ let clientes17 = [
     }
 ];
 
-let clientesSeguimiento = clientes17.filter(cliente => cliente.imc >30 && cliente.activo === false);
+let clientesSeguimiento = clientes17.filter(cliente => cliente.imc > 30 && cliente.activo === false);
 console.log(clientesSeguimiento);
+
+console.log("-------------Clase de Map, parte manual ------");
+
+let clientes18 = [
+    {
+        nombre: "Braulio",
+        imc: 35
+    },
+    {
+        nombre: "Raul",
+        imc: 22
+    },
+    {
+        nombre: "Carlos",
+        imc: 31
+    },
+    {
+        nombre: "Pedro",
+        imc: 28
+    }
+];
+
+let nombresClientes18 = [];
+
+for (let i = 0; i < clientes18.length; i++) {
+    nombresClientes18.push(clientes18[i].nombre);
+}
+
+for (let i = 0; i < nombresClientes18.length; i++) {
+    console.log(nombresClientes18[i]);
+}
+
+console.log("----Map con flecha-----");
+
+let clientesImc = clientes18.map(cliente => cliente.imc);
+console.log(clientesImc);
+
+
+let pruebaMapObjeto = [
+    {
+        nombre: "Braulio",
+        imc: 35
+    },
+]
+
+
+
+let clientesTransformados = clientes18.map(cliente => {
+    let objetoNuevo = {};
+    objetoNuevo.nombre = cliente.nombre;
+
+    if (cliente.imc > 30) {
+        objetoNuevo.estado = "Obesidad";
+    } else {
+        objetoNuevo.estado = "Normal";
+    }
+
+    return objetoNuevo;
+});
+
+console.log(clientesTransformados);
+
+console.log("------filter + map-----");
+
+let clientes19 = [
+    {
+        nombre: "Braulio",
+        imc: 35,
+        activo: true
+    },
+    {
+        nombre: "Raul",
+        imc: 22,
+        activo: true
+    },
+    {
+        nombre: "Carlos",
+        imc: 31,
+        activo: false
+    },
+    {
+        nombre: "Pedro",
+        imc: 28,
+        activo: true
+    }
+];
+
+let clientesConIMCAlto = clientes19.filter(cliente => cliente.imc > 30);
+let nombresDeClientes = clientesConIMCAlto.map(cliente => cliente.nombre);
+
+console.log(nombresDeClientes);
+
+console.log("-----Ejercicio FIlter and Map -----");
+
+let clientes20 = [
+    {
+        nombre: "Braulio",
+        imc: 35,
+        activo: true
+    },
+    {
+        nombre: "Raul",
+        imc: 22,
+        activo: true
+    },
+    {
+        nombre: "Carlos",
+        imc: 31,
+        activo: false
+    },
+    {
+        nombre: "Pedro",
+        imc: 28,
+        activo: true
+    },
+    {
+        nombre: "Luis",
+        imc: 33,
+        activo: true
+    }
+];
+
+let clientesActivosYObesos = clientes20.filter(cliente => cliente.imc > 30 && cliente.activo);
+let tarjetaCliente = clientesActivosYObesos.map(cliente => {
+    let objetoNuevo2 = {};
+
+    objetoNuevo2.nombre = cliente.nombre;
+    objetoNuevo2.mensaje = "Necesita Seguimiento";
+    
+    return objetoNuevo2;
+});
+
+console.log(tarjetaCliente);
