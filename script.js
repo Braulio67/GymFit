@@ -438,8 +438,85 @@ let tarjetaCliente = clientesActivosYObesos.map(cliente => {
 
     objetoNuevo2.nombre = cliente.nombre;
     objetoNuevo2.mensaje = "Necesita Seguimiento";
-    
+
     return objetoNuevo2;
 });
 
 console.log(tarjetaCliente);
+
+console.log("----------DOM---------------");
+
+let titulo = document.getElementById("titulo");
+let descripcion = document.getElementById("descripcion");
+let boton = document.getElementById("boton");
+let transformado = false;
+
+//titulo.textContent = "GymFit Premium";
+titulo.style.color = "black";
+titulo.style.fontSize = "50px";
+//descripcion.textContent = "Entrena con nosotros y alcanza tus objetivos.";
+
+
+
+function actualizarPagina() {
+
+    titulo.textContent = "Bienvenido a GymFit";
+    descripcion.textContent = "Transforma tu cuerpo hoy.";
+
+}
+
+//actualizarPagina();
+
+function cambiarMensaje() {
+
+    titulo.textContent = "Bienvenido a GymFit Premium";
+
+}
+
+//boton.addEventListener("click", cambiarMensaje);
+
+function cambiarTitulo() {
+
+    if(transformado){
+        titulo.textContent = "GymFit";
+        transformado = false;
+    } else{
+        titulo.textContent = "Bienvenido a la transformación";
+        transformado = true;
+    }
+    
+
+}
+
+boton.addEventListener("click", cambiarTitulo);
+
+/* Manera profesional de hacerlo para que el boton ejecute dos acciones o funciones cuando lo presionen 
+
+let titulo = document.getElementById("titulo");
+let descripcion = document.getElementById("descripcion");
+let boton = document.getElementById("boton");
+
+
+function cambiarTitulo(){
+
+    titulo.textContent = "Bienvenido a la transformación";
+
+}
+
+
+function cambiarDescripcion(){
+
+    descripcion.textContent = "Transforma tu cuerpo hoy";
+
+}
+
+
+function actualizarGymFit(){
+
+    cambiarTitulo();
+    cambiarDescripcion();
+
+}
+
+
+boton.addEventListener("click", actualizarGymFit);*/
